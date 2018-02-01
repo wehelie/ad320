@@ -32,7 +32,6 @@ function spaces():int
  */
 function letters():int
 {
-    $result = [];
     for ($i = 0; $i <= strlen(input) - 1; $i++) {
         if (ctype_alpha(input[$i])) {
             $result[] = input[$i];
@@ -125,3 +124,20 @@ function punctuation():int
     }
     return $punctuate;
 }
+
+function wordCount()
+{
+    $freq = array_count_values(str_word_count(strtolower(input), 1));
+    foreach ($freq as $key=> $value) {
+        if ($value <= 1) {
+            echo <<<EOL
+           <b>$key</b> <em>only occurs</em> $value           
+EOL;
+        } else {
+            echo <<<EOL
+       <b>$key</b> <em>occurs</em> $value
+EOL;
+        }
+    }
+}
+
