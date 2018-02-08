@@ -20,8 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ':lastname' => $lastname,
         ':email' => $email
     ));
-    
-    print "The last inserted ID is " . $handler->lastInsertId();
+}
+
+print "The last inserted ID is " . $handler->lastInsertId();
     
     // fetch data
     $query = $handler->query('SELECT * FROM MyGuests');
@@ -30,7 +31,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     // print
     echo '<pre>' , print_r($row) , '</pre>';
-}
 
 
 ?>
