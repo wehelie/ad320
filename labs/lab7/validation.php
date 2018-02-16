@@ -112,7 +112,6 @@ echo $gender;
 echo "<h2>Your Input (Cookie Data):</h2>";
 if (isset($_COOKIE['cookie'])) {
     foreach ($_COOKIE['cookie'] as $value) {
-        $name = htmlspecialchars($name);
         $value = htmlspecialchars($value);
         print "{$value} <br> \n";
     }
